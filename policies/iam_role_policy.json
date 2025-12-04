@@ -1,0 +1,34 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "AllowLambdaToReadSourceObjects",
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObject"
+			],
+			"Resource": "arn:aws:s3:::my-production-data-source-1234/*"
+		},
+		{
+			"Sid": "AllowLambdaToWriteToDestinationBucket",
+			"Effect": "Allow",
+			"Action": [
+				"s3:PutObject",
+				"s3:PutObjectAcl",
+				"s3:DeleteObject"
+			],
+			"Resource": "arn:aws:s3:::my-backup-archive-destination-1234/*"
+		},
+		{
+			"Sid": "AllowLambdaToViewSourceBucket",
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetBucketLocation"
+			],
+			"Resource": [
+				"arn:aws:s3:::my-production-data-source-1234",
+				"arn:aws:s3:::my-backup-archive-destination-1234"
+			]
+		}
+	]
+}
