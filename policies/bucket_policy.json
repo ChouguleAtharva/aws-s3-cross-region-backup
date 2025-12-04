@@ -5,7 +5,7 @@
             "Sid": "AllowLambdaToPutObject",
             "Effect": "Allow",
             "Principal": {
-                "AWS": "arn:aws:iam::038462778013:root"
+                "AWS": "you-aws-account-no.:root"
             },
             "Action": [
                 "s3:PutObject",
